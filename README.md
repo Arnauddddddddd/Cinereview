@@ -23,3 +23,9 @@ Pour construire le projet et lancer le serveur, exécutez la commande suivante d
 ```sh
 make
 ```
+
+## Pour configurer si problème : 
+
+cd frontend/
+
+npm install @vitejs/plugin-react --save-dev
