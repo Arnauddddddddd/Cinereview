@@ -7,18 +7,14 @@ import './App.css'
 function App() {
   const [data, setData] = useState(null)
 
-  const obj = {
-    query: 'star wars',
-    page: 1,
-  };
+  const formData = new FormData();
+  formData.append("query", "star wars");
+  formData.append("page", 3);
 
   useEffect(() => {
     fetch('/api/api.php', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ obj }),
+      body: formData,
     })
       .then(response => response.json())
       .then(data => setData(data))
